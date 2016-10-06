@@ -1,3 +1,6 @@
+#Find the largest perimeter of 1's in a grid
+#and display the starting co-ordinates (top left corner of rectangle)
+
 import sys
 
 def convert_int(l):
