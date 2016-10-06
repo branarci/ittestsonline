@@ -1,9 +1,8 @@
-#A ray of light comes in from the upper left corner of an MxN sized window, with 45˚ angled edges. The ray is reflected when it reaches the first or the last line, or the first or last column respectively.
-
+#A ray of light comes in from the upper left corner of an MxN sized window, with 45˚ angled edges.
+#The ray is reflected when it reaches the first or the last line, or the first or last column respectively.
 #Display all the positions reached until the ray travels to a window corner.
 
 #Input: M and N integers
-
 #Output: matrix of MXN with the positions
 
 #Example: 
@@ -17,6 +16,7 @@
 
 import sys
 
+
 ##Emulate reading from a file
 ##--------------------------------------------------------------------------------------------------------------------
 new_file = open('text.txt', "w")
@@ -24,6 +24,7 @@ new_file.write("4\n")
 new_file.write("8\n")
 new_file.close()
 ##--------------------------------------------------------------------------------------------------------------------
+
 
 f = open('text.txt', 'r')   #sys.argv[1]
 n =  int(f.readline())
@@ -36,10 +37,9 @@ for i in range(0,n):
     for j in range(0,m):
         v[i].append(0)
 
-
-##My Code
-###==================================================================================================================================
-#limits
+##My code
+##==================================================================================================================================
+#limits of grid
 #print(    v[n-1][m-1]    )
 
 corner = False
@@ -72,7 +72,7 @@ while corner == False:
 			v[currentn][currentm] = counter
 		counter +=1
 
-	#end loop
+	#end loop or
 	#check next cell in the currentdirection is valid
 	if ( (currentn == 0 and (currentm == 0 or currentm == m-1)) or (currentn == n-1 and (currentm == 0 or currentm == m-1)) ):
 		corner == True
@@ -103,8 +103,6 @@ while corner == False:
 	pastm = currentm
 ###==================================================================================================================================
 
-
-#present grid
 for i in v:
     s = ''
     for j in range(0, len(i)-1):
